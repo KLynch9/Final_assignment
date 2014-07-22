@@ -57,16 +57,74 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="Ajax.asmx" />
+    <Content Include="Animals.aspx" />
+    <Content Include="Animals.xsl" />
+    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Final.sql" />
+    <Content Include="fonts\News Cycle SIL OFL Font License 1.1.txt" />
+    <Content Include="images\bushwacker1.jpg" />
+    <Content Include="images\hippo1.jpg" />
+    <Content Include="images\home_1.jpg" />
+    <Content Include="images\home_2.jpg" />
+    <Content Include="images\home_3.jpg" />
+    <Content Include="images\image1.jpg" />
+    <Content Include="images\mountainGoat1.jpg" />
+    <Content Include="images\pattern.jpg" />
+    <Content Include="images\polarBear1.jpg" />
+    <Content Include="images\Tiger1.jpg" />
+    <Content Include="images\transparent.png" />
+    <Content Include="images\transparent_light.png" />
+    <Content Include="js\image_slide.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\modernizr-1.5.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Tickets.aspx" />
+    <Content Include="Web References\weather\ForecastReturn.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\weather\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\weather\Weather.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax.asmx.cs">
+      <DependentUpon>Ajax.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Animals.aspx.cs">
+      <DependentUpon>Animals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Animals.aspx.designer.cs">
+      <DependentUpon>Animals.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyMaster.Master.cs">
       <DependentUpon>MyMaster.Master</DependentUpon>
@@ -76,15 +134,77 @@
       <DependentUpon>MyMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.aspx.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tickets.aspx.designer.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\weather\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyMaster.Master" />
+    <Content Include="fonts\NewsCycle-Regular.eot" />
+    <Content Include="fonts\NewsCycle-Regular.ttf" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\weather\Weather.wsdl" />
+    <Content Include="Web References\weather\WeatherDescription.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\weather\WeatherReturn.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zoo_ClassLibrary\Zoo_ClassLibrary.csproj">
+      <Project>{eb321990-8189-41d1-a4b7-8c379dd00afb}</Project>
+      <Name>Zoo_ClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wsf.cdyne.com/WeatherWS/Weather.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\weather\</RelPath>
+      <UpdateFromURL>http://wsf.cdyne.com/WeatherWS/Weather.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Final_Assignment_weather_Weather</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

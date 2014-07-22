@@ -1,21 +1,103 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyMaster.master.cs" Inherits="Final_Assignment.MyMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyMaster.Master.cs" Inherits="Final_Assignment.MyMaster" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title><asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder></title>
+    
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" charset="utf-8"></script>
+    <meta name="description" content="Chestermere Zoo website" />
+    <meta name="keywords" content="HTML,CSS,XML,XHTML,Javascript" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
 </head>
+
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+   	<nav>
+	  <div id="menubar">
+        <ul id="nav">
+          <li class="current"><a href="Default.aspx">Home</a></li>
+          <li><a href="Tickets.aspx">Tickets</a></li>
+          <li><a href="Animal.aspx">Animals</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div><!--close menubar-->	
+    </nav>	
+    
+	<div id="site_content">		
+
+      <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="680" height="300" src="images/home_1.jpg" alt="&quot;The Lizards await!&quot;" /></li>
+          <li><img width="680" height="300" src="images/home_2.jpg" alt="&quot;Fantastic!&quot;" /></li>
+          <li><img width="680" height="300" src="images/home_3.jpg" alt="&quot;We have Tigers!&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->	
+	
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>New Website</h2>
+            <p>Welcome to the Chestermere Zoo Website!</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Latest Update</h2>
+            <h3>September 2013</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>August 2013</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar--> 	
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>July 2013</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar--> 		
+        <div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Contact</h2>
+            <p>Phone: +44 (0)1234 567891</p>
+            <p>Email: <a href="mailto:info@youremail.co.uk">info@youremail.co.uk</a></p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+       </div><!--close sidebar_container-->	
+        <asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="~/Admin.aspx" Visible="false">AdminPage</asp:HyperLink>
+    
+        <asp:Panel ID="pnlLoggedIn" runat="server">
+            Welcome:&nbsp;<asp:Label ID="lblUsername" runat="server" ForeColor="WhiteSmoke"></asp:Label>
+            <br />
+            <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" />
+        </asp:Panel>
+        <asp:Panel ID="pnlLoggedOut" runat="server">
+            <a href="Login.aspx">Sign in</a> or <a href="Register.aspx">register.</a>
+        </asp:Panel>
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+          </asp:ContentPlaceHolder>	  
+
+	</div><!--close site_content-->  	
+  
+    <footer>
+	  <a href="Default.aspx">Home</a> | <a href="ourwork.html">Our Work</a> | <a href="testimonials.html">Testimonials</a> | <a href="projects.html">Projects</a> | <a href="contact.html">Contact</a><br/><br/>
+	  
+    </footer> 
+  
+  </div><!--close main-->    
     </form>
+     <!-- javascript at the bottom for fast page loading -->  
+    <script src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
 </body>
 </html>
