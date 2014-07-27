@@ -2,30 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script>
-        $(document).ready(function () {
-            $('#btnCheck').click(function () {
-                var user = $('#ContentPlaceHolder1_txtUser').val();
-                if (user == '' || user == undefined) {
-                    return alert("please enter username");
-                }
-                $.ajax({
-                    type: "POST",
-                    url: "/Ajax.asmx/CheckUser",
-                    contentType: "application/json",
-                    data: '{ "user" : "' + user + '"}',
-                    success: function (data) {
-                        var userName = $("#usernameCheck");
-                        userName.html(data.d);
-                    },
-                    error: function (data) {
-                        var error = $("#error");
-                        $(error).html(data.responseText);
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/register.js"></script>
 <div id="error">
 
 </div>

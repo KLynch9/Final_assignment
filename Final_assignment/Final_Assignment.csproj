@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -63,7 +65,15 @@
     <Content Include="Animals.xsl" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Final.sql" />
+    <Content Include="js\tickets.js" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Service References\TicketServiceReference\configuration91.svcinfo" />
+    <Content Include="Service References\TicketServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\TicketServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="sql\Final.sql" />
     <Content Include="fonts\News Cycle SIL OFL Font License 1.1.txt" />
     <Content Include="images\bushwacker1.jpg" />
     <Content Include="images\hippo1.jpg" />
@@ -77,9 +87,12 @@
     <Content Include="images\Tiger1.jpg" />
     <Content Include="images\transparent.png" />
     <Content Include="images\transparent_light.png" />
+    <Content Include="js\admin.js" />
+    <Content Include="js\default.js" />
     <Content Include="js\image_slide.js" />
     <Content Include="js\jquery-1.11.0.min.js" />
     <Content Include="js\modernizr-1.5.min.js" />
+    <Content Include="js\register.js" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Tickets.aspx" />
@@ -91,7 +104,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="Web References\weather\Weather.disco" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
@@ -146,6 +161,11 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TicketServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Tickets.aspx.cs">
       <DependentUpon>Tickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +194,16 @@
     <Content Include="Web References\weather\WeatherReturn.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <Content Include="Service References\TicketServiceReference\service.wsdl" />
+    <None Include="Service References\TicketServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TicketServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TicketServiceReference\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,6 +235,9 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Final_Assignment_weather_Weather</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TicketServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

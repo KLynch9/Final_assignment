@@ -4,43 +4,47 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <div>
-        <h1>Welcome Admin</h1>
-            <asp:UpdatePanel runat="server" ID="updatePanelAdmin" ChildrenAsTriggers="true">
-                <ContentTemplate>
-                    <asp:GridView ID="gvUsers" runat="server">
+    <div id="initialContent">
+        <div id="gridview" style="width:650px">
+            <h1>Welcome Admin</h1>
+                <asp:UpdatePanel runat="server" ID="updatePanelAdmin" ChildrenAsTriggers="true">
+                    <ContentTemplate>
+                        <asp:GridView ID="gvUsers" runat="server" >
 
-                    </asp:GridView>
-                    <asp:Button ID="btnRefresh" runat="server" Text="Refresh" OnClick="btnRefresh_Click" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                        </asp:GridView>
+                        <asp:Button ID="btnRefresh" runat="server" Text="Refresh" OnClick="btnRefresh_Click" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+        </div>
+        <!--end Gridview div-->
+        <div id="adminAccess">
+            <p>Allow user Admin access:</p>
+            <select id="ddlUsers"></select>
+            <input id="btnAddAdmin" type="submit" value="Add Admin" />
+        </div><!--end admin div-->
+    </div><!--end initialContent-->
+    <div id="Edit">
+        To Edit Webpage text click here <input id="btnEditText" type="button" value="Edit" />
+    </div><!--end edit-->
+    <div id="webEdits" style="display:none">
+        <table> 
+            <tr>
+                <td>
+                    Choose Which Paragraph To Edit: <select id="ddlParagraphs"></select>
+                </td>
+            </tr>           
+            <tr>
+                <td>
+                    Edit Text: <textarea id="txtEditParagraph" rows="4" cols="50"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="btnSubmitParagraph" type="button" value="Submit Text"/>
+                </td>
+            </tr>
+
+        </table>
     </div>
-    <!--end Gridview div-->
-    <div>
-        <p>Allow user Admin access:</p>
-        <select id="ddlUsers"></select>
-        <input id="btnAddAdmin" type="submit" value="Add Admin" />
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function() {            
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: '/Ajax.asmx/GetUsers',
-                data: '{}',
-                dataType:"json",
-                success: function (msg) {
-                    $("#ddlUsers").get(0).options.length = 0;
-                    $("#ddlUsers").get(0).options[0] = new Option("Select User", "-1");
-                    
-                    $(msg.d).each(function (index) {                                                
-                        $("#ddlUsers").get(0).options[$("#ddlUsers").get(0).options.length] = new Option(msg.d[index],index)
-                    });
-                },
-                error: function (msg) {
-                    alert('Failed to load'+msg);
-                }
-            });
-        });  
-    </script>  
+    <script src="js/admin.js"></script>
 </asp:Content>

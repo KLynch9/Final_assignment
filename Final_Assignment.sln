@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final_Assignment", "Final_Assignment\Final_Assignment.csproj", "{049963DA-0C68-4414-867B-66AA0CD134A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo_ClassLibrary", "Zoo_ClassLibrary\Zoo_ClassLibrary.csproj", "{EB321990-8189-41D1-A4B7-8C379DD00AFB}"
 EndProject

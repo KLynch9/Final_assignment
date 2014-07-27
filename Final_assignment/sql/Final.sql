@@ -36,19 +36,9 @@ AnimalDescription varchar(500),
 AnimalImageURL varchar(100)
 )
 
-CREATE TABLE tbTickets
-(
-id int identity(1,1) primary key,
-TicketPrice money,
-AgeGroup varchar(30)
-)
-
 insert into tbUsers
 values('kevin','lynch','3434 gigi dr','Formosa','kevin.lynch@robertsoncollege.net','admin','admin',1),
-('Javon','Lunch','3434 gonzo rd','Carson City','javy.lch@robees.net','Knobby','beepbeep',0),
-('Bob','Nob','3434 hii rd','Long City','avy.ch@robux.com','GitBasher','odoodoodoodo',0),
-('Leroy','Hiim','3434 goy rd','Free City','javy.lch@robees.com','Githubb','uieufijenhh999',0)
-
+('Javon','Lunch','3434 gonzo rd','Carson City','javy.lch@robees.net','Knobby','beepbeep',0)
 go
 
 insert into tbParagraphText
@@ -63,10 +53,6 @@ values('Tiger','4','Meet Tonga. This amazing Tiger was found in a Florida neighb
 ('Mountain Goat','4','Say hello to Fred. Fred is one of our Mountain Goats, when he is not eating grass he really enjoys being in the highest spot possible.','\images\mountainGoat1.jpg'),
 ('Polar Bear','4','Come see Juna in our new Polar Bear exhibit. With underwater and above ground views, you are sure to catch a glimpse of some action.','\images\polarBear1.jpg'),
 ('Snake','4','Niccccccccce to meet you says Shamby the Bushwacker Snake. Our reptile exhibit has 100s of snakes and lizards for you to feast your eyes on.','\images\bushwacker1.jpg')
-go
-
-insert into tbTickets
-values (15.00,'Adult'),(10.00,'Senior'),(5.00,'Child'),(35.00,'Family')
 go
 
 create procedure spLogin
@@ -119,7 +105,7 @@ create procedure spGetUser
 @UserID INT = NULL
 )
 as
-select UserID,Username,FirstName,LastName,Address,Email from tbUsers
+select * from tbUsers
 where UserID = ISNULL(@UserID,UserID)
 go
 
@@ -176,10 +162,3 @@ BEGIN
 	Select * from tbAnimals
 END
 Go
-
-CREATE PROCEDURE spGetTicketInfo
-AS
-BEGIN
-	SELECT id,TicketPrice,AgeGroup from tbTickets
-END
-GO

@@ -115,21 +115,88 @@ namespace Final_Assignment
         }
 
         [WebMethod]
+        public List<string> GetText()
+        {
+            DAL d = new DAL(ConfigurationManager.ConnectionStrings["connString"].ConnectionString);
+            DataSet ds = d.ExecuteProcedure("spGetText");
+            List<string> list = new List<string>();
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                string u = ds.Tables[0].Rows[i]["ParagraphName"].ToString();
+                list.Add(u);
+            }
+            return list;
+        }
+
+        [WebMethod]
         public string GetWelcomeParagraph()
+        {
+            Context.Response.Clear();
+            Context.Response.ContentType = "text/plain";
+            DAL d = new DAL(ConfigurationManager.ConnectionStrings["connString"].ConnectionString);
+            DataSet ds = d.ExecuteProcedure("spGetWelcomeParagraph");
+
+            string u = ds.Tables[0].Rows[0]["ParagraphText"].ToString();
+            
+            return u;
+        }
+
+        [WebMethod]
+        public string GetFeaturedAnimalsParagraph()
         {
             Context.Response.Clear();
             Context.Response.ContentType = "text/HTML";
             DAL d = new DAL(ConfigurationManager.ConnectionStrings["connString"].ConnectionString);
             DataSet ds = d.ExecuteProcedure("spGetWelcomeParagraph");
 
-            string u = "<p>"+ds.Tables[0].Rows[0]["ParagraphText"].ToString()+"</p>";
-            //List<string> list = new List<string>();  
-            //for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            //{
-            //    string u = ds.Tables[0].Rows[i]["ParagraphText"].ToString();
-            //    list.Add(u);
-            //}
+            string u = ds.Tables[0].Rows[1]["ParagraphText"].ToString();
+
             return u;
-        }   
+        }
+
+        [WebMethod]
+        public string GetTixParagraph()
+        {
+            Context.Response.Clear();
+            Context.Response.ContentType = "text/HTML";
+            DAL d = new DAL(ConfigurationManager.ConnectionStrings["connString"].ConnectionString);
+            DataSet ds = d.ExecuteProcedure("spGetWelcomeParagraph");
+
+            string u = ds.Tables[0].Rows[2]["ParagraphText"].ToString();
+
+            return u;
+        }
+
+        [WebMethod]
+        public string UpdateParagraphText(string text,int id)
+        {
+            try
+            {
+                Context.Response.Clear();
+                Context.Response.ContentType = "text/plain";
+                DAL d = new DAL(connstring);
+                d.AddParam("id", id+1);
+                d.AddParam("ParagraphText", text);
+                DataSet ds = d.ExecuteProcedure("spUpdateParagraphText");
+                return "Paragraph Updated";
+            }
+            catch (Exception e)
+            {                
+                return "error: "+e.Message;
+            }            
+        }
+
+        [WebMethod (EnableSession=true)]
+        public string CheckSession()
+        {
+            if (HttpContext.Current.Session["uid"]!=null)
+            {
+                return "valid";           
+            }
+            else
+            {
+                return "You must log in so that we know who is buying these tickets!";
+            }
+        }  
     }
 }

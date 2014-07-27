@@ -24,7 +24,12 @@ namespace Final_Assignment
                 
                 if (ds.Tables[0].Rows[0]["Username"].ToString()=="admin")
                 {
-                    lnkAdmin.Visible = true;    
+                    string s = this.ContentPlaceHolder1.Page.GetType().FullName;
+                    if (s!="ASP.admin_aspx")
+                    {
+                        lnkAdmin.Visible = true; 
+                    }
+                       
                 }
                 else
                 {                    

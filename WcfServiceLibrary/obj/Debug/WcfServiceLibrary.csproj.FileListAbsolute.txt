@@ -4,3 +4,5 @@ C:\Users\sdSTUDENT\Final_Assignment\WcfServiceLibrary\bin\Debug\WcfServiceLibrar
 C:\Users\sdSTUDENT\Final_Assignment\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Users\sdSTUDENT\Final_Assignment\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
 C:\Users\sdSTUDENT\Final_Assignment\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb
+C:\Users\sdSTUDENT\Final_Assignment\WcfServiceLibrary\bin\Debug\My_DAL.dll
+C:\Users\sdSTUDENT\Final_Assignment\WcfServiceLibrary\bin\Debug\My_DAL.pdb

@@ -6,25 +6,24 @@
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder></title>
     
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" charset="utf-8"></script>
     <meta name="description" content="Chestermere Zoo website" />
     <meta name="keywords" content="HTML,CSS,XML,XHTML,Javascript" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!-- modernizr enables HTML5 elements and feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" charset="utf-8"></script>
+
 </head>
 
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <form id="form1" runat="server" method="post">
+    <div id="main">
    	<nav>
 	  <div id="menubar">
         <ul id="nav">
           <li class="current"><a href="Default.aspx">Home</a></li>
           <li><a href="Tickets.aspx">Tickets</a></li>
-          <li><a href="Animal.aspx">Animals</a></li>
-          <li><a href="#">Reports</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="Animals.aspx">Animals</a></li>
         </ul>
       </div><!--close menubar-->	
     </nav>	
@@ -42,34 +41,34 @@
 	  <div class="sidebar_container">       
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h2>New Website</h2>
+            <h2>Zoo Website</h2>
             <p>Welcome to the Chestermere Zoo Website!</p>
           </div><!--close sidebar_item--> 
         </div><!--close sidebar-->     		
 		<div class="sidebar">
           <div class="sidebar_item">
             <h2>Latest Update</h2>
-            <h3>September 2013</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+            <h3>July 2014</h3>
+            <p>It's never been a better time to buy a family pass! As of today they are selling for $35.00. Down from last yeard price of $45.00.</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar-->
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h3>August 2013</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+            <h3>August 2014</h3>
+            <p>Summer at the zoo is always a treat. Speaking of treats, help yourself to an ice cream bar at one of our many food and drink kiosks</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar--> 	
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h3>July 2013</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+            <h3>Sept 2014</h3>
+            <p>Don't go back to school without checking out the zoo once or ten times! For real though...we need you to come support us..</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar--> 		
         <div class="sidebar">
           <div class="sidebar_item">
             <h2>Contact</h2>
-            <p>Phone: +44 (0)1234 567891</p>
-            <p>Email: <a href="mailto:info@youremail.co.uk">info@youremail.co.uk</a></p>
+            <p>Phone:  (403)234 5678</p>
+            <p>Email: <a href="mailto:kevin.lynch@robertsoncollege.com">Zoo Questions/Concerns</a></p>
           </div><!--close sidebar_item--> 
         </div><!--close sidebar-->
        </div><!--close sidebar_container-->	
@@ -90,14 +89,14 @@
 	</div><!--close site_content-->  	
   
     <footer>
-	  <a href="Default.aspx">Home</a> | <a href="ourwork.html">Our Work</a> | <a href="testimonials.html">Testimonials</a> | <a href="projects.html">Projects</a> | <a href="contact.html">Contact</a><br/><br/>
+	  <a href="Default.aspx">Home</a> | <a href="Animals.aspx">Animals</a> | <a href="Tickets">Tickets</a> | <a href="mailto:kevin.lynch@robertsoncollege.net">Contact</a><br/><br/>
 	  
     </footer> 
   
   </div><!--close main-->    
     </form>
      <!-- javascript at the bottom for fast page loading -->  
-    <script src="js/jquery-1.11.0.min.js"></script>
+    
   <script type="text/javascript" src="js/image_slide.js"></script>
 </body>
 </html>

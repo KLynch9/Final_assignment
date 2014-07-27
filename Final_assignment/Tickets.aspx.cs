@@ -11,7 +11,17 @@ namespace Final_Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                TicketServiceReference.LoadTextServiceClient tix = new TicketServiceReference.LoadTextServiceClient();
+                BindData(tix); 
+            }            
+        }
 
+        private void BindData(TicketServiceReference.LoadTextServiceClient tix)
+        {
+            gvTickets.DataSource= tix.GetTicketInfo();
+            gvTickets.DataBind();
         }
     }
 }
